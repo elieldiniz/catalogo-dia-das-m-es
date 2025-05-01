@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Catálogo Canecas Dia das Mães - Iro Person</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@400;700&display=swap');
+
+  body {
+    font-family: 'Montserrat', sans-serif;
+    background: linear-gradient(135deg, #fce4ec, #f8bbd0);
+    margin: 0;
+    padding: 0;
+    color: #4a148c;
+  }
+  header {
+    background-color: #ad1457;
+    color: #fff;
+    padding: 30px 20px;
+    text-align: center;
+    font-size: 3rem;
+    font-family: 'Great Vibes', cursive;
+    letter-spacing: 3px;
+    text-shadow: 1px 1px 4px rgba(0,0,0,0.3);
+    position: relative;
+  }
+  header::after {
+    content: "Iro Person";
+    position: absolute;
+    bottom: 8px;
+    right: 20px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #fce4eccc;
+  }
+  .catalog {
+    max-width: 1200px;
+    margin: 40px auto 60px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(280px,1fr));
+    gap: 30px;
+    padding: 0 20px;
+  }
+  .caneca-card {
+    background: #fff0f6;
+    border-radius: 20px;
+    box-shadow: 0 10px 20px rgba(173, 20, 87, 0.3);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 2px solid transparent;
+    position: relative;
+  }
+  .caneca-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 30px rgba(173, 20, 87, 0.5);
+    border-color: #ad1457;
+  }
+  .carousel {
+    position: relative;
+    width: 240px;
+    height: 240px;
+    overflow: hidden;
+    border-radius: 18px;
+    box-shadow: 0 6px 15px rgba(173, 20, 87, 0.2);
+    margin-bottom: 18px;
+  }
+  .carousel-images {
+    display: flex;
+    width: 480px; /* 2 images x 240px */
+    transition: transform 0.4s ease;
+  }
+  .carousel-images img {
+    width: 240px;
+    height: 240px;
+    object-fit: cover;
+    flex-shrink: 0;
+  }
+  .carousel-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(173, 20, 87, 0.7);
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    padding: 6px 12px;
+    border-radius: 50%;
+    cursor: pointer;
+    user-select: none;
+    transition: background-color 0.3s ease;
+  }
+  .carousel-button:hover {
+    background-color: #ad1457;
+  }
+  .carousel-button.prev {
+    left: 8px;
+  }
+  .carousel-button.next {
+    right: 8px;
+  }
+  .caneca-nome {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+    text-align: center;
+    color: #880e4f;
+    font-family: 'Great Vibes', cursive;
+  }
+  .caneca-frase {
+    font-size: 1.1rem;
+    font-style: italic;
+    margin-bottom: 20px;
+    text-align: center;
+    color: #6a1b9a;
+    line-height: 1.4;
+  }
+  .btn-whatsapp {
+    background-color: #25d366;
+    color: white;
+    border: none;
+    border-radius: 30px;
+    padding: 12px 30px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    cursor: pointer;
+    box-shadow: 0 6px 12px rgba(37,211,102,0.5);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+    letter-spacing: 1px;
+  }
+  .btn-whatsapp:hover {
+    background-color: #1ebe57;
+    box-shadow: 0 8px 18px rgba(30,190,87,0.7);
+  }
+  footer {
+    text-align: center;
+    padding: 25px 20px;
+    background-color: #ad1457;
+    color: white;
+    font-size: 1.1rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+  }
+  footer a {
+    color: #fce4eccc;
+    text-decoration: none;
+    font-weight: 700;
+  }
+  footer a:hover {
+    color: #fff;
+    text-decoration: underline;
+  }
+
+  /* Responsividade extra */
+  @media (max-width: 768px) {
+    header {
+      font-size: 2.2rem;
+      padding: 25px 15px;
+    }
+    .caneca-nome {
+      font-size: 1.3rem;
+    }
+    .caneca-frase {
+      font-size: 1rem;
+    }
+    .btn-whatsapp {
+      font-size: 1rem;
+      padding: 10px 25px;
+    }
+  }
+  @media (max-width: 480px) {
+    header {
+      font-size: 1.8rem;
+      padding: 20px 10px;
+    }
+    .catalog {
+      grid-template-columns: 1fr;
+      gap: 25px;
+      margin: 30px 10px 50px;
+    }
+    .caneca-nome {
+      font-size: 1.2rem;
+    }
+    .caneca-frase {
+      font-size: 0.95rem;
+    }
+    .btn-whatsapp {
+      font-size: 0.95rem;
+      padding: 10px 20px;
+    }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  Canecas Especiais para o Dia das Mães 2025
+</header>
+
+<main class="catalog" id="catalog">
+  <!-- Canecas serão inseridas aqui via JS -->
+</main>
+
+<footer>
+  Fale conosco pelo WhatsApp: <a href="https://wa.me/55699999311324" target="_blank">(69) 99993-11324</a>
+</footer>
+
+<script>
+  const canecas = [
+    {
+      nome: "Caneca Floral Rosa",
+      imgs: ["imagens/2.png", "imagens/1.png"]
+    },
+    {
+      nome: "Caneca Te Amo ",
+
+      imgs: ["imagens/3.png", "imagens/4.png"]
+    },
+    {
+      nome: "Caneca Você  e  d+",
+
+      imgs: ["imagens/6.png", "imagens/5.png"]
+    },
+    {
+      nome: "Caneca Minha Mãe Minha Rainha",
+
+      imgs: ["imagens/7.png", "imagens/8.png"]
+    },
+    {
+      nome: "Caneca Da Rainha",
+
+      imgs: ["imagens/9.png", "imagens/10.png"]
+    },
+    {
+      nome: "Caneca florida + frase",
+
+      imgs: ["imagens/11.png", "imagens/12.png"]
+    },
+    {
+      nome: "Caneca Maes fitines",
+
+      imgs: ["imagens/15.png", "imagens/14.png"]
+    },
+    {
+      nome: "Caneca Sogra Tambem e Mãe",
+
+      imgs: ["imagens/23.png", "imagens/22.png"]
+    },
+    {
+      nome: "Caneca Com letra Dourada",
+      imgs: ["imagens/16.png", "imagens/17.png"]
+    },
+    {
+      nome: "Caneca Mãe Eu Te Amo",
+
+      imgs: ["imagens/18.png", "imagens/19.png"]
+    },
+    {
+      nome: "Caneca Rainha",
+
+      imgs: ["imagens/20.png", "imagens/21.png"]
+    },
+    {
+      nome: "Caneca Feliz Dias Das Maes",
+
+      imgs: ["imagens/24.png", "imagens/25.png"]
+    },
+    {
+      nome: "Caneca I Love ",
+  
+      imgs: ["imagens/26.png", "imagens/27.png"]
+    },
+    {
+      nome: "Caneca Momentos",
+
+      imgs: ["imagens/28.png", "imagens/29.png"]
+    },
+    {
+      nome: "Caneca Melhor Mãe do Mundo",
+
+      imgs: ["imagens/30.png", "imagens/31.png"]
+    }
+  ];
+
+  const catalog = document.getElementById('catalog');
+
+  canecas.forEach((caneca, index) => {
+    const card = document.createElement('div');
+    card.className = 'caneca-card';
+
+    // Carousel container
+    const carousel = document.createElement('div');
+    carousel.className = 'carousel';
+
+    // Images container
+    const imagesContainer = document.createElement('div');
+    imagesContainer.className = 'carousel-images';
+    imagesContainer.style.transform = 'translateX(0)';
+
+    // Add images
+    caneca.imgs.forEach(src => {
+      const img = document.createElement('img');
+      img.src = src;
+      img.alt = caneca.nome;
+      imagesContainer.appendChild(img);
+    });
+
+    carousel.appendChild(imagesContainer);
+
+    // Prev button
+    const prevBtn = document.createElement('button');
+    prevBtn.className = 'carousel-button prev';
+    prevBtn.innerHTML = '&#10094;';
+    carousel.appendChild(prevBtn);
+
+    // Next button
+    const nextBtn = document.createElement('button');
+    nextBtn.className = 'carousel-button next';
+    nextBtn.innerHTML = '&#10095;';
+    carousel.appendChild(nextBtn);
+
+    // Name and phrase
+    const nome = document.createElement('div');
+    nome.className = 'caneca-nome';
+    nome.textContent = caneca.nome;
+
+    const frase = document.createElement('div');
+    frase.className = 'caneca-frase';
+    frase.textContent = caneca.frase;
+
+    // WhatsApp button
+    const btn = document.createElement('a');
+    btn.className = 'btn-whatsapp';
+    btn.href = `https://wa.me/556992445784?text=Olá!%20Tenho%20interesse%20na%20${encodeURIComponent(caneca.nome)}%20do%20catálogo%20de%20Dia%20das%20Mães.`;
+    btn.target = '_blank';
+    btn.rel = 'noopener noreferrer';
+    btn.textContent = 'Quero esta';
+
+    // Append all
+    card.appendChild(carousel);
+    card.appendChild(nome);
+    card.appendChild(frase);
+    card.appendChild(btn);
+
+    catalog.appendChild(card);
+
+    // Carousel functionality
+    let currentIndex = 0;
+    prevBtn.addEventListener('click', () => {
+      currentIndex = (currentIndex === 0) ? caneca.imgs.length - 1 : currentIndex - 1;
+      imagesContainer.style.transform = `translateX(-${currentIndex * 240}px)`;
+    });
+    nextBtn.addEventListener('click', () => {
+      currentIndex = (currentIndex === caneca.imgs.length - 1) ? 0 : currentIndex + 1;
+      imagesContainer.style.transform = `translateX(-${currentIndex * 240}px)`;
+    });
+  });
+</script>
+
+</body>
+</html>
