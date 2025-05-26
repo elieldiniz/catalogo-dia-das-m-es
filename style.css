@@ -1,0 +1,357 @@
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@400;700&display=swap');
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  background: linear-gradient(135deg, #fce4ec, #f8bbd0);
+  margin: 0;
+  padding: 0;
+  color: #4a148c;
+}
+
+/* HEADER MELHORADO */
+header {
+  background-color: #ad1457;
+  color: #fff;
+  padding: 0;
+  text-align: center;
+  position: relative;
+  box-shadow: 0 2px 12px rgba(173, 20, 87, 0.08);
+}
+
+.header-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 22px;
+  padding: 30px 20px 30px 20px;
+  flex-wrap: wrap;
+}
+
+.logo-header {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: #fff0f6;
+  box-shadow: 0 2px 8px rgba(173, 20, 87, 0.12);
+  object-fit: contain;
+  border: 3px solid #f8bbd0;
+  transition: box-shadow 0.3s;
+}
+
+.logo-header:hover {
+  box-shadow: 0 4px 16px rgba(173, 20, 87, 0.22);
+}
+
+.header-title {
+  font-size: 2.5rem;
+  font-family: 'Great Vibes', cursive;
+  letter-spacing: 3px;
+  text-shadow: 1px 1px 4px rgba(0,0,0,0.18);
+  font-weight: 700;
+  line-height: 1.1;
+  display: block;
+}
+
+header::after {
+  content: "Iro Person";
+  position: absolute;
+  bottom: 8px;
+  right: 20px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #fce4eccc;
+}
+
+@media (max-width: 768px) {
+  .header-content {
+    flex-direction: column;
+    gap: 12px;
+    padding: 22px 10px 22px 10px;
+  }
+  .header-title {
+    font-size: 1.7rem;
+  }
+  .logo-header {
+    width: 48px;
+    height: 48px;
+  }
+  header::after {
+    font-size: 1rem;
+    right: 10px;
+    bottom: 4px;
+  }
+}
+
+@media (max-width: 480px) {
+  .header-content {
+    padding: 14px 4px 14px 4px;
+    gap: 8px;
+  }
+  .header-title {
+    font-size: 1.1rem;
+  }
+  .logo-header {
+    width: 36px;
+    height: 36px;
+  }
+  header::after {
+    font-size: 0.9rem;
+    right: 6px;
+    bottom: 2px;
+  }
+}
+
+/* RESTANTE DO SEU CSS IGUAL */
+.catalog {
+  max-width: 1200px;
+  margin: 40px auto 60px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(280px,1fr));
+  gap: 30px;
+  padding: 0 20px;
+}
+
+.caneca-card {
+  background: #fff0f6;
+  border-radius: 20px;
+  box-shadow: 0 10px 20px rgba(173, 20, 87, 0.3);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 2px solid transparent;
+  position: relative;
+}
+
+.caneca-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 30px rgba(173, 20, 87, 0.5);
+  border-color: #ad1457;
+}
+
+.carousel {
+  position: relative;
+  width: 240px;
+  height: 240px;
+  overflow: hidden;
+  border-radius: 18px;
+  box-shadow: 0 6px 15px rgba(173, 20, 87, 0.2);
+  margin-bottom: 18px;
+}
+
+.carousel-images {
+  display: flex;
+  width: 480px; /* 2 images x 240px */
+  transition: transform 0.4s ease;
+}
+
+.carousel-images img {
+  width: 240px;
+  height: 240px;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.carousel-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(173, 20, 87, 0.7);
+  border: none;
+  color: white;
+  font-size: 1.5rem;
+  padding: 6px 12px;
+  border-radius: 50%;
+  cursor: pointer;
+  user-select: none;
+  transition: background-color 0.3s ease;
+}
+
+.carousel-button:hover {
+  background-color: #ad1457;
+}
+
+.carousel-button.prev {
+  left: 8px;
+}
+
+.carousel-button.next {
+  right: 8px;
+}
+
+.caneca-nome {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+  text-align: center;
+  color: #880e4f;
+  font-family: 'Great Vibes', cursive;
+}
+
+.caneca-frase {
+  font-size: 1.1rem;
+  font-style: italic;
+  margin-bottom: 20px;
+  text-align: center;
+  color: #6a1b9a;
+  line-height: 1.4;
+}
+
+.btn-whatsapp {
+  background-color: #25d366;
+  color: white;
+  border: none;
+  border-radius: 30px;
+  padding: 12px 30px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 6px 12px rgba(37,211,102,0.5);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  text-decoration: none;
+  display: inline-block;
+  letter-spacing: 1px;
+}
+
+.btn-whatsapp:hover {
+  background-color: #1ebe57;
+  box-shadow: 0 8px 18px rgba(30,190,87,0.7);
+}
+
+footer {
+  text-align: center;
+  padding: 25px 20px;
+  background-color: #ad1457;
+  color: white;
+  font-size: 1.1rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+footer a {
+  color: #fce4eccc;
+  text-decoration: none;
+  font-weight: 700;
+}
+
+footer a:hover {
+  color: #fff;
+  text-decoration: underline;
+}
+
+/* Responsividade melhorada */
+@media (max-width: 1024px) {
+  .catalog {
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+  }
+  .carousel, .carousel-images img {
+    width: 180px;
+    height: 180px;
+  }
+  .carousel-images {
+    width: 360px;
+  }
+}
+
+@media (max-width: 768px) {
+  .caneca-nome {
+    font-size: 1.3rem;
+  }
+  .caneca-frase {
+    font-size: 1rem;
+  }
+  .btn-whatsapp {
+    font-size: 1rem;
+    padding: 10px 25px;
+  }
+  .carousel, .carousel-images img {
+    width: 140px;
+    height: 140px;
+  }
+  .carousel-images {
+    width: 280px;
+  }
+}
+
+@media (max-width: 480px) {
+  .catalog {
+    grid-template-columns: 1fr;
+    gap: 14px;
+    margin: 20px 5px 30px;
+    padding: 0 2px;
+  }
+  .caneca-card {
+    padding: 10px;
+  }
+  .caneca-nome {
+    font-size: 1.1rem;
+  }
+  .caneca-frase {
+    font-size: 0.95rem;
+  }
+  .btn-whatsapp {
+    font-size: 0.95rem;
+    padding: 8px 10px;
+    max-width: 100%;
+  }
+  .carousel, .carousel-images img {
+    width: 100px;
+    height: 100px;
+  }
+  .carousel-images {
+    width: 200px;
+  }
+}
+
+/* Botões de categoria */
+.categoria-seletor {
+  display: flex;
+  justify-content: center;
+  gap: 18px;
+  margin: 30px 0 10px 0;
+}
+
+.categoria-btn {
+  background: linear-gradient(90deg, #ad1457 60%, #f8bbd0 100%);
+  color: #fff;
+  border: none;
+  border-radius: 30px;
+  padding: 12px 32px;
+  font-size: 1.1rem;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  letter-spacing: 1px;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(173, 20, 87, 0.15);
+  transition: background 0.3s, color 0.3s, box-shadow 0.3s;
+  outline: none;
+}
+
+.categoria-btn:not(.active):hover {
+  background: linear-gradient(90deg, #f8bbd0 60%, #ad1457 100%);
+  color: #ad1457;
+  box-shadow: 0 6px 16px rgba(173, 20, 87, 0.25);
+}
+
+.categoria-btn.active {
+  background: linear-gradient(90deg, #6a1b9a 60%, #ad1457 100%);
+  color: #fff;
+  box-shadow: 0 8px 20px rgba(106, 27, 154, 0.18);
+  border: 2px solid #fff;
+}
+
+@media (max-width: 480px) {
+  .categoria-seletor {
+    flex-direction: column;
+    gap: 10px;
+    margin: 18px 0 6px 0;
+  }
+  .categoria-btn {
+    width: 100%;
+    padding: 10px 0;
+    font-size: 1rem;
+  }
+}
