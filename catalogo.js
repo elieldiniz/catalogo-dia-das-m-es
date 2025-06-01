@@ -12,7 +12,6 @@ function renderCatalogo(canecas, categoria) {
     // Images container
     const imagesContainer = document.createElement('div');
     imagesContainer.className = 'carousel-images';
-    imagesContainer.style.transform = 'translateX(0)';
 
     // Add images
     caneca.imgs.forEach(src => {
@@ -56,16 +55,34 @@ function renderCatalogo(canecas, categoria) {
 
     catalog.appendChild(card);
 
-    // Carousel functionality
+    // Carousel functionality (responsivo)
     let currentIndex = 0;
+
+    function updateCarousel() {
+      const carouselWidth = carousel.offsetWidth;
+      imagesContainer.style.transform = `translateX(-${currentIndex * carouselWidth}px)`;
+      imagesContainer.style.width = `${caneca.imgs.length * carouselWidth}px`;
+      // Ajusta a largura de cada imagem
+      Array.from(imagesContainer.children).forEach(img => {
+        img.style.width = carouselWidth + 'px';
+        img.style.height = carouselWidth + 'px';
+      });
+    }
+
+    // Atualiza ao redimensionar a tela
+    window.addEventListener('resize', updateCarousel);
+
     prevBtn.addEventListener('click', () => {
       currentIndex = (currentIndex === 0) ? caneca.imgs.length - 1 : currentIndex - 1;
-      imagesContainer.style.transform = `translateX(-${currentIndex * 240}px)`;
+      updateCarousel();
     });
     nextBtn.addEventListener('click', () => {
       currentIndex = (currentIndex === caneca.imgs.length - 1) ? 0 : currentIndex + 1;
-      imagesContainer.style.transform = `translateX(-${currentIndex * 240}px)`;
+      updateCarousel();
     });
+
+    // Garante que o carrossel começa certo
+    setTimeout(updateCarousel, 0);
   });
 }
 
@@ -83,5 +100,5 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
   // Inicializa com a primeira categoria
-  atualizarCatalogo(btns[0].getAttribute('data-categoria'));
+  atualizarCatalogo(btns[1].getAttribute('data-categoria'));
 });

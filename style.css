@@ -63,46 +63,7 @@ header::after {
   color: #fce4eccc;
 }
 
-@media (max-width: 768px) {
-  .header-content {
-    flex-direction: column;
-    gap: 12px;
-    padding: 22px 10px 22px 10px;
-  }
-  .header-title {
-    font-size: 1.7rem;
-  }
-  .logo-header {
-    width: 48px;
-    height: 48px;
-  }
-  header::after {
-    font-size: 1rem;
-    right: 10px;
-    bottom: 4px;
-  }
-}
-
-@media (max-width: 480px) {
-  .header-content {
-    padding: 14px 4px 14px 4px;
-    gap: 8px;
-  }
-  .header-title {
-    font-size: 1.1rem;
-  }
-  .logo-header {
-    width: 36px;
-    height: 36px;
-  }
-  header::after {
-    font-size: 0.9rem;
-    right: 6px;
-    bottom: 2px;
-  }
-}
-
-/* RESTANTE DO SEU CSS IGUAL */
+/* GRID DE CANECAS */
 .catalog {
   max-width: 1200px;
   margin: 40px auto 60px;
@@ -131,6 +92,7 @@ header::after {
   border-color: #ad1457;
 }
 
+/* CARROSSEL */
 .carousel {
   position: relative;
   width: 240px;
@@ -181,6 +143,7 @@ header::after {
   right: 8px;
 }
 
+/* TEXTO E BOTÃO */
 .caneca-nome {
   font-size: 1.5rem;
   font-weight: 700;
@@ -220,6 +183,7 @@ header::after {
   box-shadow: 0 8px 18px rgba(30,190,87,0.7);
 }
 
+/* FOOTER */
 footer {
   text-align: center;
   padding: 25px 20px;
@@ -241,72 +205,7 @@ footer a:hover {
   text-decoration: underline;
 }
 
-/* Responsividade melhorada */
-@media (max-width: 1024px) {
-  .catalog {
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 20px;
-  }
-  .carousel, .carousel-images img {
-    width: 180px;
-    height: 180px;
-  }
-  .carousel-images {
-    width: 360px;
-  }
-}
-
-@media (max-width: 768px) {
-  .caneca-nome {
-    font-size: 1.3rem;
-  }
-  .caneca-frase {
-    font-size: 1rem;
-  }
-  .btn-whatsapp {
-    font-size: 1rem;
-    padding: 10px 25px;
-  }
-  .carousel, .carousel-images img {
-    width: 140px;
-    height: 140px;
-  }
-  .carousel-images {
-    width: 280px;
-  }
-}
-
-@media (max-width: 480px) {
-  .catalog {
-    grid-template-columns: 1fr;
-    gap: 14px;
-    margin: 20px 5px 30px;
-    padding: 0 2px;
-  }
-  .caneca-card {
-    padding: 10px;
-  }
-  .caneca-nome {
-    font-size: 1.1rem;
-  }
-  .caneca-frase {
-    font-size: 0.95rem;
-  }
-  .btn-whatsapp {
-    font-size: 0.95rem;
-    padding: 8px 10px;
-    max-width: 100%;
-  }
-  .carousel, .carousel-images img {
-    width: 100px;
-    height: 100px;
-  }
-  .carousel-images {
-    width: 200px;
-  }
-}
-
-/* Botões de categoria */
+/* BOTÕES DE CATEGORIA (opcional) */
 .categoria-seletor {
   display: flex;
   justify-content: center;
@@ -343,15 +242,150 @@ footer a:hover {
   border: 2px solid #fff;
 }
 
-@media (max-width: 480px) {
-  .categoria-seletor {
+/* RESPONSIVIDADE */
+@media (max-width: 1024px) {
+  .catalog {
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+  }
+  .carousel, .carousel-images img {
+    width: 180px;
+    height: 180px;
+  }
+  .carousel-images {
+    width: 360px;
+  }
+}
+
+@media (max-width: 768px) {
+  .header-content {
     flex-direction: column;
     gap: 10px;
-    margin: 18px 0 6px 0;
+    padding: 18px 6px 18px 6px;
+  }
+  .header-title {
+    font-size: 1.3rem;
+  }
+  .logo-header {
+    width: 40px;
+    height: 40px;
+  }
+  header::after {
+    font-size: 0.9rem;
+    right: 6px;
+    bottom: 2px;
+  }
+  .catalog {
+    grid-template-columns: 1fr;
+    gap: 16px;
+    margin: 18px 2px 24px;
+    padding: 0 2px;
+  }
+  .caneca-card {
+    padding: 8px;
+  }
+  .caneca-nome {
+    font-size: 1.05rem;
+  }
+  .caneca-frase {
+    font-size: 0.93rem;
+  }
+  .btn-whatsapp {
+    font-size: 0.93rem;
+    padding: 7px 8px;
+    max-width: 100%;
+  }
+  .carousel, .carousel-images img {
+    width: 90vw;
+    max-width: 220px;
+    height: 90vw;
+    max-height: 220px;
+  }
+  .carousel-images {
+    width: 180vw;
+    max-width: 440px;
+  }
+  .carousel-button {
+    font-size: 1.2rem;
+    padding: 4px 8px;
+  }
+  .categoria-seletor {
+    flex-direction: column;
+    gap: 8px;
+    margin: 10px 0 4px 0;
   }
   .categoria-btn {
     width: 100%;
-    padding: 10px 0;
+    padding: 8px 0;
+    font-size: 0.98rem;
+  }
+  footer {
+    font-size: 0.98rem;
+    padding: 14px 4px;
+  }
+}
+
+@media (max-width: 480px) {
+  .header-content {
+    padding: 10px 2px 10px 2px;
+    gap: 6px;
+  }
+  .header-title {
     font-size: 1rem;
+  }
+  .logo-header {
+    width: 28px;
+    height: 28px;
+  }
+  header::after {
+    font-size: 0.8rem;
+    right: 2px;
+    bottom: 1px;
+  }
+  .catalog {
+    grid-template-columns: 1fr;
+    gap: 8px;
+    margin: 10px 1px 16px;
+    padding: 0 1px;
+  }
+  .caneca-card {
+    padding: 4px;
+  }
+  .caneca-nome {
+    font-size: 0.98rem;
+  }
+  .caneca-frase {
+    font-size: 0.88rem;
+  }
+  .btn-whatsapp {
+    font-size: 0.88rem;
+    padding: 6px 4px;
+    max-width: 100%;
+  }
+  .carousel, .carousel-images img {
+    width: 90vw;
+    max-width: 140px;
+    height: 90vw;
+    max-height: 140px;
+  }
+  .carousel-images {
+    width: 180vw;
+    max-width: 280px;
+  }
+  .carousel-button {
+    font-size: 1rem;
+    padding: 2px 6px;
+  }
+  .categoria-seletor {
+    gap: 6px;
+    margin: 6px 0 2px 0;
+  }
+  .categoria-btn {
+    font-size: 0.93rem;
+    padding: 6px 0;
+  }
+  footer {
+    font-size: 0.93rem;
+    padding: 8px 2px;
   }
 }
