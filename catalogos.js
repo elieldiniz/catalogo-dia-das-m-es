@@ -28,5 +28,25 @@ window.catalogos = {
     { nome: "Caneca Feliz Dias Dos namorados", imgs: ["imagens/namorados/9.png","imagens/namorados/.png"] },
     { nome: "Caneca Queria Te dar o mundo ", imgs: ["imagens/namorados/10.png","imagens/namorados/.png"] },
     { nome: "Caneca Meu amor por Voce e maior Que minha Vida", imgs: ["imagens/namorados/15.png","imagens/namorados/12.png"] },
-  ]
+  ],
+  "Dia dos Pais" : [
+    { nome: "Caneca oficial do Paizão", imgs: ["imagens/pais/1.png"]},
+    { nome: "Troféu de pai", imgs: ["imagens/pais/2.png"]},
+    { nome: "Eu te amo meu paizão", imgs: ["imagens/pais/3.png"]},
+    { nome: "Paizão Voce é o cara", imgs: ["imagens/pais/4.png"]},
+    { nome: "Feliz dia dos Pais", imgs: ["imagens/pais/5.png"]},
+    { nome: "Pai", imgs: ["imagens/pais/6.png"]},
+    { nome: "Paizão meu eterno amigo", imgs: ["imagens/pais/7.png"]},
+    { nome: "Dia dos Pais", imgs: ["imagens/pais/8.png"]},
+    { nome: "Paizão com foto", imgs: ["imagens/pais/9.png"]},
+    { nome: "Paizão", imgs: ["imagens/pais/10.png"]},
+    { nome: "Pai para toda obra", imgs: ["imagens/pais/11.png", "imagens/pais/12.png"]},
+    { nome: "Pai varal de fotos", imgs: ["imagens/pais/13.png"]},
+    { nome: "Pai coroa", imgs: ["imagens/pais/14.png"]},
+    { nome: "Pai torcedor", imgs: ["imagens/pais/15.png"]},
+    { nome: "Meu pai Meu heroi", imgs: ["imagens/pais/16.png"]},
+    { nome: "Caneca melhor pai ", imgs: ["imagens/pais/17.png"]},
+    { nome: "Caneca exclusiva melhor pai", imgs: ["imagens/pais/18.png"]},
+  ],
+
 };
